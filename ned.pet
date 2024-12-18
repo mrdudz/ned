@@ -1,0 +1,101 @@
+------------------------------------------------------------------------
+ NED.C        Á SIMPLE FOUR-FUNCTION TEXT EDITOR
+------------------------------------------------------------------------
+
+ NED IS A SIMPLE TEXT EDITOR FOR THOSE WHO CAN'T BE BOTHERED WITH THE
+ FINICKINESS OF VI AND DON'T LIKE WAITING FOR EMACS TO DRAG ITS DRIPPING
+ ELEPHANTINE CARCASS INTO CORE JUST FOR THE SAKE OF MAKING A QUICK EDIT
+ TO A FILE.
+
+ NED WAS ORIGINALLY WRITTEN FOR ÍÓ-ÄÏÓ BECAUSE É NEEDED A SIMPLE EDITOR
+ THAT WOULD WORK FROM A SESSION ÃÔÔÙ'D DOWN A ÃÏÍ PORT.  ÉT CAN STILL
+ FULFILL THAT ROLE.
+
+------------------------------------------------------------------------
+
+ ÕSAGE: NED FILENAME [LINE]
+
+ ÓIMPLE COMMANDS:
+      ÐÆ1, ÃTRL/Ö                          ÆUNCTION SHIFT KEY (ÓÈÉÆÔ BELOW)
+      ÕP, ÄOWN, ÌEFT, ÒIGHT      * ÍOVEMENT KEYS
+      ÃTRL/Á                             * ÂEGINNING OF LINE
+      ÃTRL/Å                             * ÅND OF LINE
+      ÐREVÓCREEN, ÃTRL/Õ             * ÕP A SCREEN
+      ÎEXTÓCREEN, ÃTRL/Î             * ÄOWN A SCREEN
+      ÃTRL/Ä                             * ÄELETE CHARACTER TO RIGHT
+      ÄÅÌ, ÃTRL/È                        ÄELETE CHARACTER TO LEFT
+      ÃTRL/Ë                  ÄELETE TO END OF LINE
+      ÓELECT, ÃTRL/Â          ÍARK START OF SELECTION
+      ÒEMOVE, ÃTRL/×          ÃUT FROM MARK TO CURSOR
+      ÉNSERTÈERE, ÃTRL/Ù      ÐASTE CUT TEXT
+      ÃTRL/Ê                  ÊUSTIFY LINE
+      ÆIND, ÃTRL/Æ            ÆIND TEXT
+      ÃTRL/Ç                  ÇO TO SPECIFIC LINE NUMBER
+      ÃTRL/^                  ÉNSERT CONTROL CHARACTER
+      ÃTRL/Ì                  ÒEFRESH SCREEN
+      ÃTRL/Ã                  ÑUIT WITHOUT SAVING
+      ÃTRL/Ø                  ÑUIT WITH SAVE
+
+ ÓHIFTED COMMANDS, KEY ÐÆ1 OR ÃTRL/Ö THEN COMMAND:
+      ÐREVÓCREEN, ÃTRL/Õ      ÇO TO TOP OF FILE
+      ÎEXTÓCREEN, ÃTRL/Î      ÇO TO BOTTOM OF FILE
+      ÆIND, ÃTRL/Æ            ÆIND TEXT BACKWARDS
+      I, É                    ÉNCLUDE FILE
+      W, ×                    ÓAVE FILE UNDER NEW NAME
+      R, Ò                    ÒEPLACE FOUND TEXT WITH CONTENTS OF CUT BUFFER
+
+ ÁBOVE KEYS ARE ÄÅÃ ÌË201/401 NAMES; ÐÃ-101/104 EQUIVALENTS ARE:
+      ÐREVÓCREEN      ÐAGEÕP
+      ÎEXTÓCREEN      ÐAGEÄN
+      ÆIND            ÈOME
+      ÓELECT          ÅND
+      ÒEMOVE          ÄELETE
+      ÉNSERTÈERE      ÉNSERT
+      ÄÅÌ             ÂACKSPACE
+      ÐÆ1             ÎUMÌOCK (NOT ON ÄÏÓ VERSION -- USE ÃTRL/Ö)
+
+------------------------------------------------------------------------
+
+ ÃURRENT VERSION TESTED BY ME UNDER ÎETÂÓÄ 1.*, ÌINUX, ÍÓ-ÄÏÓ (ÔURBO Ã Ö2.0).
+ ÁLSO SEEN WORKING UNDER ÓOLARIS 2.6 AND ÈÐÕØ 10.20.  ÏLDER VERSION TESTED
+ WITH ÄIGITAL ÕNIX; SHOULD WORK WITH MOST ÕNICES.
+
+ ÃOMPILING UNDER ÕNIX:
+      CC -O NED NED.C -LCURSES -LTERMCAP
+      OR JUST SH NED.C
+
+ ÃOMPILING UNDER ÄÏÓ (ÔURBO Ã V2.0; LATER VERSIONS SHOULD BE SIMILAR --
+ SWITCHES ARE JUST TO TURN OFF SOME OVERLY PARANOID WARNINGS, TO USE
+ THE LARGE MEMORY MODEL, AND ENABLE EMULATION OF CURSES FUNCTIONS)
+      TCC -ÄÄÏÓ -ML -W-PIA -W-PAR NED
+
+ ÎOTE: ÕNDER ÄÏÓ REQUIRES ÁÎÓÉ.ÓÙÓ OR EQUIVALENT.
+
+ ÁUTHOR:
+      ÄON ÓTOKES
+      ÄAEDALUS ÃONSULTING ÓERVICES
+      ÅMAIL: DON@DAEDALUS.CO.NZ
+
+ ÍODIFICATIONS (SINCE V0.7):
+      8/12/98/DCS
+              ÁDDED HORIZONTAL PANNING
+              ÊUSTIFY LINE FIXED TO WORK ON LAST LINE OF FILE, ALSO
+              MOVE CURSOR TO END OF LINE.
+
+------------------------------------------------------------------------
+
+ÃOPYRIGHT 1996, 1997, 1998 ÄON ÓTOKES.  ÁLL RIGHTS RESERVED.
+
+ÐERMISSION GRANTED FOR INDIVIDUAL USE.  ÕNAUTHORISED RE-DISTRIBUTION
+PROHIBITED.  (ÔHAT IS, PLEASE ASK PERMISSION BEFORE PLACING IN PUBLIC
+ARCHIVE OR INCLUDING IN OTHER NON-COMMERCIAL PACKAGES -- IT WILL ALMOST
+CERTAINLY BE GIVEN.  ÁRRANGEMENTS CAN BE REACHED FOR COMMERCIAL
+DISTRIBUTION.)
+
+ÎO WARRANTY OF FITNESS EXPRESSED OR IMPLIED.  ÎO LIABILITY WILL BE ACCEPTED
+FOR LOSS OR DAMAGE CAUSED OR CONTRIBUTED TO BY ANY USE OR MISUSE OF THIS
+PROGRAM.
+
+ÁLL COPIES, REGARDLESS OF INDIVIDUAL ARRANGEMENTS, MUST RETAIN THIS NOTICE.
+
+

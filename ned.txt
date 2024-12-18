@@ -1,0 +1,100 @@
+------------------------------------------------------------------------
+ ned.c        A simple four-function text editor
+------------------------------------------------------------------------
+
+ ned is a simple text editor for those who can't be bothered with the
+ finickiness of vi and don't like waiting for emacs to drag its dripping
+ elephantine carcass into core just for the sake of making a quick edit
+ to a file.
+
+ ned was originally written for MS-DOS because I needed a simple editor
+ that would work from a session CTTY'd down a COM port.  It can still
+ fulfill that role.
+
+------------------------------------------------------------------------
+
+ Usage: ned filename [line]
+
+ Simple commands:
+      PF1, Ctrl/V                          Function shift key (SHIFT below)
+      Up, Down, Left, Right      * Movement keys
+      Ctrl/A                             * Beginning of line
+      Ctrl/E                             * End of line
+      PrevScreen, Ctrl/U             * Up a screen
+      NextScreen, Ctrl/N             * Down a screen
+      Ctrl/D                             * Delete character to right
+      DEL, Ctrl/H                        Delete character to left
+      Ctrl/K                  Delete to end of line
+      Select, Ctrl/B          Mark start of selection
+      Remove, Ctrl/W          Cut from mark to cursor
+      InsertHere, Ctrl/Y      Paste cut text
+      Ctrl/J                  Justify line
+      Find, Ctrl/F            Find text
+      Ctrl/G                  Go to specific line number
+      Ctrl/^                  Insert control character
+      Ctrl/L                  Refresh screen
+      Ctrl/C                  Quit without saving
+      Ctrl/X                  Quit with save
+
+ Shifted commands, key PF1 or Ctrl/V then command:
+      PrevScreen, Ctrl/U      Go to top of file
+      NextScreen, Ctrl/N      Go to bottom of file
+      Find, Ctrl/F            Find text backwards
+      i, I                    Include file
+      w, W                    Save file under new name
+      r, R                    Replace found text with contents of cut buffer
+
+ Above keys are DEC LK201/401 names; PC-101/104 equivalents are:
+      PrevScreen      PageUp
+      NextScreen      PageDn
+      Find            Home
+      Select          End
+      Remove          Delete
+      InsertHere      Insert
+      DEL             Backspace
+      PF1             NumLock (not on DOS version -- use Ctrl/V)
+
+------------------------------------------------------------------------
+
+ Current version tested by me under NetBSD 1.*, Linux, MS-DOS (Turbo C V2.0).
+ Also seen working under Solaris 2.6 and HPUX 10.20.  Older version tested
+ with Digital Unix; should work with most Unices.
+
+ Compiling under Unix:
+      cc -o ned ned.c -lcurses -ltermcap
+      or just sh ned.c
+
+ Compiling under DOS (Turbo C v2.0; later versions should be similar --
+ switches are just to turn off some overly paranoid warnings, to use
+ the large memory model, and enable emulation of curses functions)
+      tcc -DDOS -ml -w-pia -w-par ned
+
+ Note: Under DOS requires ANSI.SYS or equivalent.
+
+ Author:
+      Don Stokes
+      Daedalus Consulting Services
+      Email: don@daedalus.co.nz
+
+ Modifications (since v0.7):
+      8/12/98/dcs
+              Added horizontal panning
+              Justify line fixed to work on last line of file, also
+              move cursor to end of line.
+
+------------------------------------------------------------------------
+
+Copyright 1996, 1997, 1998 Don Stokes.  All rights reserved.
+
+Permission granted for individual use.  Unauthorised re-distribution
+prohibited.  (That is, please ask permission before placing in public
+archive or including in other non-commercial packages -- it will almost
+certainly be given.  Arrangements can be reached for commercial
+distribution.)
+
+No warranty of fitness expressed or implied.  No liability will be accepted
+for loss or damage caused or contributed to by any use or misuse of this
+program.
+
+All copies, regardless of individual arrangements, must retain this notice.
+
